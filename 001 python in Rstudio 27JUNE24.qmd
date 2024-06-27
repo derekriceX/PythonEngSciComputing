@@ -1,0 +1,45 @@
+---
+title: "Python fibonacci code in R studio"
+author: "Derek Rice"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{python}
+import matplotlib.pyplot as plt
+
+# Function to calculate Fibonacci numbers
+def fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2])
+    return fib
+
+# Calculate the first 100 Fibonacci numbers
+fib_sequence = fibonacci(100)
+
+# Plot the Fibonacci numbers
+plt.plot(fib_sequence, marker='o', linestyle='-')
+plt.title('First 100 Fibonacci Numbers')
+plt.xlabel('Index')
+plt.ylabel('Fibonacci Number')
+plt.show()
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
